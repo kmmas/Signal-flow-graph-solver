@@ -1,0 +1,43 @@
+<div id="overlay" *ngIf="showsolution">
+  <div id="solution">
+    <h1>Solution</h1>
+    <p id="overallfunction">{{overallfunction}}</p>
+    <details open>
+      <summary>Forward Paths</summary>
+      <pre id="forwardPaths">{{forwardPaths}}</pre>
+    </details>
+    <details open>
+      <summary>Individual Loops</summary>
+      <pre id="loops">{{loops}}</pre>
+    </details>
+    <details open>
+      <summary>Non-Touching Loops</summary>
+      <pre id="nonTouchingLoops">{{nonTouchingLoops}}</pre>
+    </details>
+    <details open>
+      <summary>The values of Deltas</summary>
+      <pre id="deltas">{{deltas}}</pre>
+    </details>
+    <button (click)="closeSolution()">Close</button>
+  </div>
+</div>
+<div class="outer">
+  <div class="inner">
+    <button (click)="AddNode()">Add Node</button>
+    <button (click)="SetSource()">Set Source</button>
+    <button (click)="SetEnd()">Set End</button>
+    <button (click)="Organize()">Organize and Fit</button>
+    <button (click)="DeleteNode()">delete node</button>
+    <button (click)="Clear()">Clear All</button>
+    <button (click)="solve()">solve</button>
+  </div>
+  <div class="inner">
+    <label>From:<input type="text" [(ngModel)]="from"></label>
+    <label>To:<input type="text" [(ngModel)]="to"></label>
+    <label>Value:<input type="text" [(ngModel)]="value"></label>
+    <button (click)="  ConnectEdge()">Add edge</button>
+  </div>
+</div>
+<div class="container">
+  <div id="cy"></div>
+</div>
